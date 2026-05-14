@@ -458,8 +458,9 @@ button.btn-solid {
 
   /* --- About / Values --- */
   .about-band {
-    border-radius: 80px 0 0 80px;
-    padding: 4rem 1.5rem 3rem;
+    border-radius: 0;
+    margin-top: 0;
+    padding: 3rem 1.5rem 3rem;
   }
 
   .about-inner {
