@@ -416,43 +416,81 @@ button.btn-solid {
    ============================================ */
 
 @media (max-width: 700px) {
+
+  /* --- Hero --- */
   .hero {
-    flex-direction: column;
-    padding: 3rem 1.5rem 6rem;
+    padding: 2rem 1.5rem 5rem;
+  }
+
+  .hero-logo {
+    width: 160px;
+    margin: 0 0 1.5rem 0;
   }
 
   .hero-text {
-    padding-left: 0;
+    margin-left: 0;
+    margin-top: 0;
+    max-width: 100%;
   }
 
-  .hero-graphic {
-    padding-right: 0;
-    justify-content: center;
+  .hero h1 {
+    font-size: 1.75rem;
   }
 
-  .hero-graphic img {
-    width: 260px;
+  .hero p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* Hide brush stroke on mobile — it covers text */
+  .hero-brush {
+    display: none;
+  }
+
+  /* --- Floating button --- */
+  .floating-contact {
+    top: auto;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.9rem;
+    padding: 0.55rem 1.1rem;
+  }
+
+  /* --- About / Values --- */
+  .about-band {
+    border-radius: 80px 0 0 80px;
+    padding: 4rem 1.5rem 3rem;
   }
 
   .about-inner {
-    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .values-columns {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* --- Services --- */
+  .services {
+    padding: 3rem 1.5rem;
   }
 
   .service-cards {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .contact-inner {
-    flex-direction: column;
     gap: 2rem;
   }
 
-  .contact-left {
+  .service-card {
     max-width: 100%;
   }
 
-  .form-row {
+  /* --- Footer --- */
+  .site-footer {
     flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 0.75rem;
   }
 }
