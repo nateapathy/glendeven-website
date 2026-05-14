@@ -487,6 +487,10 @@ button.btn-solid {
     max-width: 100%;
   }
 
+  .card-icon {
+    width: 80px;
+  }
+
   /* --- Footer --- */
   .site-footer {
     flex-direction: column;
