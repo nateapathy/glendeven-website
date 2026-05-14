@@ -1,0 +1,10 @@
+---
+title: "About"
+draft: true
+---
+
+About this site
+
+```{r}
+1 + 1
+```

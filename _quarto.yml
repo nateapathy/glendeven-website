@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Glendeven Research"
+  search: false
+  navbar:
+    pinned: true
+    # right:                          # uncomment all below when pages are ready
+    #   - text: "About"
+    #     href: about.qmd
+    #   - text: "Bio"
+    #     href: bio.qmd
+    #   - text: "Services"
+    #     href: services.qmd
+    #   - text: "Contact"
+    #     href: contact.qmd
+
+format:
+  html:
+    theme: default
+    css: styles.css
+    toc: false
+    include-in-header:
+      text: |
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var brand = document.querySelector('.navbar-brand');
+          if (!brand) return;
+          window.addEventListener('scroll', function () {
+            brand.style.opacity = window.scrollY > 100 ? '1' : '0';
+          });
+        });
+        </script>

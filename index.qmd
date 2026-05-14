@@ -1,0 +1,72 @@
+---
+title: ""
+format:
+  html:
+    page-layout: custom
+---
+
+```{=html}
+<!-- FLOATING CONTACT BUTTON -->
+<a href="mailto:genna@glendevenresearch.com" class="floating-contact">Get In Touch</a>
+
+<!-- HERO + ABOUT WRAPPER (brush stroke straddles both) -->
+<div class="hero-about-wrapper">
+
+  <section class="hero">
+    <img src="elements/Square Logo - White.png" class="hero-logo" alt="Glendeven Research">
+    <div class="hero-text">
+      <h1>We study health care delivery and policy</h1>
+      <p>Glendeven Research provides insight into how health care organizations and professionals use technology, respond to changing policy environments, and innovate. We aim to translate complexity into actionable knowledge for policymakers and health care leaders.</p>
+    </div>
+  </section>
+
+  <!-- Brush stroke positioned absolutely to straddle the two sections -->
+  <img src="elements/brush stroke green green.svg" class="hero-brush" alt="">
+
+  <section class="about-band">
+    <div class="about-inner">
+      <h2>We pursue excellence through joyful collaboration:</h2>
+      <div class="values-columns">
+        <div class="value-item">
+          <h3>Excellence</h3>
+          <p>We approach our work with curiosity, integrity, and rigor</p>
+        </div>
+        <div class="value-item">
+          <h3>Joyful Collaboration</h3>
+          <p>We prioritize teamwork and relish the opportunity to bring humanity and good humor to complex work</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- SERVICES SECTION -->
+<section class="services">
+  <h2>What We Do</h2>
+  <div class="service-cards">
+    <div class="service-card">
+      <img src="elements/purple accent icon.svg" class="card-icon" alt="Styles of Work icon">
+      <h3>Styles of Work</h3>
+      <p>Solo projects, task leadership, and team extension</p>
+    </div>
+    <div class="service-card">
+      <img src="elements/green accent icon.svg" class="card-icon" alt="Subject Matter Expertise icon">
+      <h3>Subject Matter Expertise</h3>
+      <p>Primary care, health IT, health care organization and change, public health</p>
+    </div>
+    <div class="service-card">
+      <img src="elements/burgundy accent icon.svg" class="card-icon" alt="Methodological Expertise icon">
+      <h3>Methodological Expertise</h3>
+      <p>Qualitative interviews, mixed methods, EHR and other log data</p>
+    </div>
+  </div>
+  <a href="mailto:genna@glendevenresearch.com" class="btn-solid green">Get In Touch</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>Copyright 2026 Glendeven Research, LLC</p>
+  <p>Website style and branding by <a href="https://juliecruz.studio/" target="_blank" rel="noopener">Julie Cruz</a></p>
+</footer>
+```
