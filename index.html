@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Glendeven Research -</title>
+<title>Glendeven Research, LLC -</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -48,12 +48,48 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script>
+// Random favicon per session
+(function() {
+  var favicons = [
+    'elements/brush%20stroke%20green%20green.svg',
+    'elements/brush%20stroke%20green%20burgundy.svg',
+    'elements/brush%20stroke%20green%20beige.svg',
+    'elements/brush%20stroke%20beige%20burgundy.svg'
+  ];
+  var picked = sessionStorage.getItem('glendeven-favicon');
+  if (!picked) {
+    picked = favicons[Math.floor(Math.random() * favicons.length)];
+    sessionStorage.setItem('glendeven-favicon', picked);
+  }
+  var link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/svg+xml';
+  link.href = picked;
+  document.head.appendChild(link);
+})();
+</script>
+<script>
+document.title = "Glendeven Research, LLC";
 document.addEventListener('DOMContentLoaded', function () {
+  // Fade in brand text on scroll
   var brand = document.querySelector('.navbar-brand');
-  if (!brand) return;
-  window.addEventListener('scroll', function () {
-    brand.style.opacity = window.scrollY > 100 ? '1' : '0';
-  });
+  if (brand) {
+    window.addEventListener('scroll', function () {
+      brand.style.opacity = window.scrollY > 100 ? '1' : '0';
+    });
+  }
+  // Inject brush stroke icon on the left of the navbar
+  var navContainer = document.querySelector('.navbar .container-fluid');
+  if (navContainer) {
+    var logoLink = document.createElement('a');
+    logoLink.href = './';
+    logoLink.className = 'navbar-brush-icon';
+    var logoImg = document.createElement('img');
+    logoImg.src = 'elements/brush stroke beige burgundy.svg';
+    logoImg.alt = 'Home';
+    logoLink.appendChild(logoImg);
+    navContainer.prepend(logoLink);
+  }
 });
 </script>
 
@@ -69,11 +105,22 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Glendeven Research</span>
+    <span class="navbar-title">Glendeven Research, LLC</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Glendeven Research - About</title>
+<title>Glendeven Research, LLC -</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -82,12 +48,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <script>
+// Random favicon per session
+(function() {
+  var favicons = [
+    'elements/brush%20stroke%20green%20green.svg',
+    'elements/brush%20stroke%20green%20burgundy.svg',
+    'elements/brush%20stroke%20green%20beige.svg',
+    'elements/brush%20stroke%20beige%20burgundy.svg'
+  ];
+  var picked = sessionStorage.getItem('glendeven-favicon');
+  if (!picked) {
+    picked = favicons[Math.floor(Math.random() * favicons.length)];
+    sessionStorage.setItem('glendeven-favicon', picked);
+  }
+  var link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/svg+xml';
+  link.href = picked;
+  document.head.appendChild(link);
+})();
+</script>
+<script>
+document.title = "Glendeven Research, LLC";
 document.addEventListener('DOMContentLoaded', function () {
+  // Fade in brand text on scroll
   var brand = document.querySelector('.navbar-brand');
-  if (!brand) return;
-  window.addEventListener('scroll', function () {
-    brand.style.opacity = window.scrollY > 100 ? '1' : '0';
-  });
+  if (brand) {
+    window.addEventListener('scroll', function () {
+      brand.style.opacity = window.scrollY > 100 ? '1' : '0';
+    });
+  }
+  // Inject brush stroke icon on the left of the navbar
+  var navContainer = document.querySelector('.navbar .container-fluid');
+  if (navContainer) {
+    var logoLink = document.createElement('a');
+    logoLink.href = './';
+    logoLink.className = 'navbar-brush-icon';
+    var logoImg = document.createElement('img');
+    logoImg.src = 'elements/brush stroke beige burgundy.svg';
+    logoImg.alt = 'Home';
+    logoLink.appendChild(logoImg);
+    navContainer.prepend(logoLink);
+  }
 });
 </script>
 
@@ -103,50 +105,91 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Glendeven Research</span>
+    <span class="navbar-title">Glendeven Research, LLC</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
+<!-- FLOATING CONTACT BUTTON -->
+<a href="mailto:genna@glendevenresearch.com" class="floating-contact">Get In Touch</a>
 
-    
-  
-    
+<!-- PROFILES SECTION -->
+<script>
+window.addEventListener('load', function () {
+  var navbar = document.querySelector('header.fixed-top');
+  var profiles = document.querySelector('.about-profiles');
+  if (navbar && profiles) {
+    profiles.style.paddingTop = (navbar.clientHeight + 40) + 'px';
+  }
+});
+</script>
+<section class="about-profiles">
+  <div class="about-hero-inner">
+    <div class="profile-card">
+      <div class="profile-photo-wrapper">
+        <img src="elements/genna-photo.jpg" class="profile-photo" alt="Genna">
+      </div>
+      <h2 class="profile-name">Genna R. Cohen, PhD</h2>
+      <p class="profile-credentials">Founder, CEO, &amp; Senior Researcher</p>
+      <p class="profile-blurb">Genna is the principal researcher at Glendeven, with expertise in using qualitative and mixed methods to study health information technology use and regulation of EHR developers, primary care, public health informatics, and health system transformation and consolidation. Genna's PhD in Health Services Organization and Policy is from the University of Michigan School of Public Health (2016), and she previously worked at Mathematica and its former subsidiary the Center for Studying Health System Change.</p>
+    </div>
+    <div class="profile-card">
+      <div class="profile-photo-wrapper">
+        <img src="elements/nate-photo.jpg" class="profile-photo" alt="Nate">
+      </div>
+      <h2 class="profile-name">Nate C. Apathy, PhD</h2>
+      <p class="profile-credentials">CTO &amp; Consulting Researcher | <a href="https://www.nateapathy.com" target="_blank" rel="noopener">nateapathy.com</a></p>
+      <p class="profile-blurb">Nate's primary position is as an Assistant Professor of Health Policy &amp; Management at the <a href="https://sph.umd.edu/people/nate-apathy" target="_blank" rel="noopener">University of Maryland School of Public Health</a>. He consults on research and technical advisory projects. Nate is a leading expert in using EHR audit log data for health services research, clinical informatics evaluations, and health economics. His PhD in Health Policy &amp; Management is from the Indiana University Fairbanks School of Public Health (2020), with a postdoctoral fellowship at the University of Pennsylvania Perelman School of Medicine &amp; Leonard Davis Institute of Health Economics. He previously worked at Medstar Health Research Institute and Cerner.</p>
+    </div>
   </div>
-  
+</section>
 
-</header>
+<!-- ABOUT THE BUSINESS SECTION (inside wrapper so purple fills behind curve) -->
+<section class="about-business-band">
+  <div class="about-business-inner">
+    <h2>About Glendeven Research</h2>
+    <p>Named after a B&amp;B in Mendocino, Glendeven Research developed organically in 2026 to support projects that needed a partner to accelerate work on tight deadlines. Both Genna and Nate are motivated to use their expertise to understand complex issues in health policy and practice; by contracting with Glendeven, you'll have access to their shared perspective, network, and pop-culture references.</p>
+    <p>Glendeven is happy to run standalone projects or join larger teams as task leads or partners. Early work includes advising the Office of the National Coordinator for Health IT (ONC) how to refine surveys on the Technical Exchange Framework and Common Agreement (TEFCA), helping to design and implement the qualitative arm of a study on the effects of EHR optimization interventions in primary care, and supporting a team at University of Minnesota and the University of California San Francisco (UCSF) studying the implementation, scale-up, and impact of age-friendly health systems.</p>
+    <p>We're excited to explore opportunities to collaborate! Please email <a href="mailto:genna@glendevenresearch.com">genna@glendevenresearch.com</a> to discuss next steps or request additional photos of Glendeven's <a href="#" onclick="document.getElementById('bruce-modal').style.display='flex'; return false;">supervising canine, Bruce</a>.</p>
+  </div>
+</section>
 
-<p>About this site</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<!-- BRUCE LIGHTBOX -->
+<div id="bruce-modal" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.82); z-index:9999; cursor:pointer; align-items:center; justify-content:center;">
+  <img src="elements/bruce.png" style="max-width:min(67%, 90vw); max-height:75vh; border-radius:10px; box-shadow:0 8px 40px rgba(0,0,0,0.6);" alt="Bruce, supervising canine">
 </div>
-</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>Copyright 2026 Glendeven Research, LLC</p>
+  <p>Website style and branding by <a href="https://juliecruz.studio/" target="_blank" rel="noopener">Julie Cruz</a></p>
+</footer>
 
 
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

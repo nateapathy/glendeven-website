@@ -81,6 +81,17 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%) !important;
 }
 
+.navbar-brush-icon {
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+}
+
+.navbar-brush-icon img {
+  height: 38px;
+  width: auto;
+}
+
 /* Nav items stretch full height of navbar */
 .navbar-nav {
   align-items: stretch !important;
@@ -297,6 +308,162 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card:nth-child(3) h3,
 .service-card:nth-child(3) p { color: var(--burgundy); }
+
+/* ============================================
+   ABOUT PAGE
+   ============================================ */
+
+.about-hero {
+  background-color: var(--purple);
+  padding: 5rem 4rem 0;
+  position: relative;
+}
+
+.about-hero-headline {
+  max-width: 1100px;
+  margin: 0 auto;
+  color: var(--white);
+}
+
+.about-hero-headline h1 {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  color: var(--white);
+}
+
+/* Seamless second purple section holding the profile cards */
+.about-profiles {
+  background-color: var(--purple);
+  padding: 5rem 4rem 6rem;
+}
+
+.about-hero-inner {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  flex: 1;
+  max-width: 420px;
+  color: var(--white);
+}
+
+.profile-photo-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  color: var(--white);
+}
+
+.profile-credentials {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.profile-blurb {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.profile-blurb a,
+.profile-credentials a {
+  color: var(--beige);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.profile-blurb a:hover,
+.profile-credentials a:hover {
+  opacity: 0.75;
+}
+
+.about-business-band {
+  background-color: var(--beige);
+  padding: 6rem 4rem 5rem;
+}
+
+.about-business-inner {
+  max-width: 720px;
+  margin-left: max(2rem, calc(33vw - 310px));
+}
+
+.about-business-band h2 {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.about-business-band p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  color: var(--dark);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .about-hero {
+    padding: 5rem 1.5rem 1.5rem;
+  }
+
+  .about-profiles {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .about-hero-inner {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .profile-card {
+    max-width: 100%;
+  }
+
+  .profile-photo-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-business-band {
+    border-radius: 0;
+    padding: 3rem 1.5rem;
+  }
+
+  .about-business-inner {
+    margin-left: 0;
+  }
+
+  /* Hide navbar brush icon on mobile — navbar collapses to hamburger */
+  .navbar-brush-icon {
+    display: none;
+  }
+}
 
 /* ============================================
    FLOATING CONTACT BUTTON
