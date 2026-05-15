@@ -469,14 +469,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem 0 !important;
   }
 
-  /* Hide hamburger, always show nav items */
+  /* Style the hamburger button */
   .navbar-toggler {
-    display: none !important;
+    border: none !important;
+    padding: 0.25rem 1rem !important;
+    color: var(--white) !important;
   }
 
-  .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
+  .navbar-toggler-icon {
+    filter: invert(1);
   }
 }
 
