@@ -459,9 +459,24 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 0;
   }
 
-  /* Hide navbar brush icon on mobile — navbar collapses to hamburger */
+  /* Hide navbar brush icon on mobile */
   .navbar-brush-icon {
     display: none;
+  }
+
+  /* Slim down navbar on mobile */
+  .navbar {
+    padding: 0.5rem 0 !important;
+  }
+
+  /* Hide hamburger, always show nav items */
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
   }
 }
 
